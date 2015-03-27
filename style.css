@@ -1,0 +1,30 @@
+/*Here will contain the main body of tick tack toe Remeber D.R.Y.*/
+/* The below wil be the base of the interface containing the portraits and the game board 9 boxes*/
+.container{
+	height: 600px;
+	width: 1000px;
+	background-color: gray;
+	margin: 0 auto;
+}
+/* Below are the pieces for the game board.*/
+.box{
+	height: 200px;
+	width: 200px;
+	background-color: white;
+	display: table;
+}
+
+/* The below is the base of my game board.*/
+.gameboard{
+	height: 600px;
+	width: 600px;
+	background-color: black;
+}
+
+/* The below will contain the colums for the portraits*/
+.right-container,.left-container {
+	height: 600px;
+	width: 200px;
+	background-color: black;
+}
+
