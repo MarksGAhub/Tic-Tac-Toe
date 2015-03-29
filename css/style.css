@@ -1,18 +1,31 @@
 /*Here will contain the main body of tick tack toe Remeber D.R.Y.*/
 /* The below wil be the base of the interface containing the portraits and the game board 9 boxes*/
 .container{
-	height: auto;
+	height: 600px;
 	width: 1100px;
 	background-color: gray;
-/* Added the 20px to give a margin between the container and the vehicle select (top right bottom left)
-   The left margin inherits the right margin because it's not stated.
- */
-	margin: 0 auto 20px;
+	margin: 0 auto;
 /*	margin-top: 75px;*/
+	vertical-align: top;
 	text-align: center;
-/* This will make any child div inside a relative of this container. */
-	position: relative;
+	
+	
 }
+/* Below are the pieces for the game board.*/
+.box {
+	height: 145.5px;
+	width: 145.5px;
+	background-color: red;
+	border: 2px solid white;
+	border-radius: 15px;
+	float: right;
+	margin: 5px;
+}
+/*The below hover is highlighting the selection for the game board*/
+	.box:hover
+	{
+	background-color: blue;
+	}
 
 /* The below is the base of my game board.*/
 .gameboard{
@@ -24,58 +37,36 @@
 	text-align: center;
 	display: inline-block;
 	/**/
-}
 
-/* Below are the pieces for the game board.*/
-.box {
-	height: 145.5px;
-	width: 145.5px;
-	background-color: red;
-	border: 2px solid white;
-	border-radius: 15px;
-	margin: 5px;
-/* Changed this from float to in-line block 
-   I really think float is only best used for when you're trying to wrap text
-   around an image or some element. Not very good for layouts. Try changing this
-   to float again and you'll see what I mean.
-*/
-	display: inline-block;
+	
+	
+	
 }
-/*The below hover is highlighting the selection for the game board*/
-	.box:hover
-	{
-	background-color: blue;
-	}
 
 /* The below will contain the columns for the portraits*/
 .left-container {
-	height: auto;
+	height: 450px;
 	width: 300px;
-/* This is set to absolute, meaning it should be absolutely positioned in reference to 
-the browser window BUT it isn't doing so because the parent .container is set to display: relative
-meaning this child div which is inside .container is now absolutely positioned RELATIVE
-to the .container and no longer the browser window. If .container wasn't set to relative, this
-left-container div would be in the top left corner of the browser window. */
-	position: absolute;
+	position: relative;
 	top: 0px;
 	left: 0px;
 	background-color: black;
 	display: inline-block;
+
+
 }
 
 /* The below will contain the columns for the portraits*/
 .right-container {
-	height: auto;
+	height: 450px;
 	width: 300px;
-/* This is set to absolute, meaning it should be absolutely positioned in reference to 
-the browser window BUT it isn't doing so because the parent .container is set to display: relative
-meaning this child div which is inside .container is now absolutely positioned RELATIVE
-to the .container and no longer the browser window. */
-	position: absolute;
+	position: relative;
 	top: 0px;
 	right: 0px;
 	background-color: black;
 	display: inline-block;
+	
+
 }
 
 /* This will contain the portrait of the 3 vehicles*/
@@ -89,24 +80,26 @@ to the .container and no longer the browser window. */
 }
 
 /*The below is a hover effect to make vehicle selection appear easier*/
-	.vbox:hover{
-	border: 6px solid yellow;
-	margin: auto;
-	
-	}
+.vbox:hover{
+border: 6px solid yellow;
+margin: auto;
+
+}
 
 /* This will contain the bottom row that will have 3 vehicles*/
-.vrow {
+.vrow{
 	height: 165px;
 	width: 500px;
 	/*border: 4px solid yellow;*/
-/* Added a 20px margin to the bottom of the vrow div so that it gives some space between the vehicle select and the bottom of the browser. Looks a bit nicer. */
-	margin: 0 auto 20px;ß
+	margin: 0 auto;
 	text-align: center;
 
 }
 
-/* Game Title */
-h1 {
+.gameTitle{
+
 	text-align: center;
+	
 }
+
+
