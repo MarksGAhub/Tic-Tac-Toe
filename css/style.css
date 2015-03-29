@@ -2,7 +2,7 @@
 /* The below wil be the base of the interface containing the portraits and the game board 9 boxes*/
 .container{
 	height: 600px;
-	width: 1100px;
+	width: ;
 	background-color: gray;
 	margin: 0 auto;
 /*	margin-top: 75px;*/
@@ -28,7 +28,7 @@
 	}
 
 /* The below is the base of my game board.*/
-.gameboard{
+#gameboard{
 	height: 450px;
 	width: 480px;
 	/*background-color: black;*/
@@ -44,7 +44,7 @@
 }
 
 /* The below will contain the columns for the portraits*/
-.left-container {
+/*.left-container {
 	height: 450px;
 	width: 300px;
 	position: relative;
@@ -57,7 +57,7 @@
 }
 
 /* The below will contain the columns for the portraits*/
-.right-container {
+/*.right-container {
 	height: 450px;
 	width: 300px;
 	position: relative;
@@ -100,6 +100,18 @@ margin: auto;
 
 	text-align: center;
 	
+}
+.nav{
+	height: 450px;
+	width: 480px;
+	/*background-color: black;*/
+	margin: 0 auto;
+	/* text-align centers content inside the div*/
+	/*text-align: center;*/
+	display: inline-block;
+
+
+
 }
 
 
