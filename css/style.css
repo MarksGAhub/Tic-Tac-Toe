@@ -1,158 +1,112 @@
-/*Here will contain the main body of tick tack toe Remeber D.R.Y.*/
-/* The below wil be the base of the interface containing the portraits and the game board 9 boxes*/
+
+@font-face{
+	font-family: Gunmetal;
+	src: url(css/font/gunmetal_regular/gunmetal_regular.ttf);
+}
+body{
+	font-family: Gunmetal;
+	background-color: white;
+	text-align: center;
+	margin: 0px auto;
+}
+
 .container{
-
-	height: 600px;
-	width: ;
-
-	height: auto;
-	width: 1100px;
-
 	background-color: gray;
-/* Added the 20px to give a margin between the container and the vehicle select (top right bottom left)
-   The left margin inherits the right margin because it's not stated.
- */
-	margin: 0 auto 20px;
-/*	margin-top: 75px;*/
-	text-align: center;
-/* This will make any child div inside a relative of this container. */
-	position: relative;
-}
-
-/* The below is the base of my game board.*/
-.gameboard{
-	height: 450px;
-	width: 480px;
-	/*background-color: black;*/
 	margin: 0 auto;
-	/* text-align centers content inside the div*/
 	text-align: center;
-	display: inline-block;
-	/**/
 }
 
-/* Below are the pieces for the game board.*/
-.box {
-	height: 145.5px;
-	width: 145.5px;
-	background-color: red;
-	border: 2px solid white;
-	border-radius: 15px;
-	margin: 5px;
-/* Changed this from float to in-line block 
-   I really think float is only best used for when you're trying to wrap text
-   around an image or some element. Not very good for layouts. Try changing this
-   to float again and you'll see what I mean.
-*/
+#row1{
 	display: inline-block;
 }
-/*The below hover is highlighting the selection for the game board*/
-	.box:hover
-	{
-	background-color: blue;
-	}
 
-/* The below is the base of my game board.*/
+/* The below will be the score place holder*/
+
+.box1{
+	height: 50px;
+	width: 100px;
+	background-color: white;
+	display: inline-block;
+	border-radius: 10px;
+	margin-top: 2%;
+	
+}
+/*Below will hold the dimensions and the margins of the scoreboards*/
+#scoreBoard1{
+	height: 50px;
+	width: 100px;
+	margin-right: 320px;
+}
+
+#scoreBoard2{
+	height: 50px;
+	width: 100px;
+	margin-left: 320px;
+}
+
+/* Below will hold the dimensions of the portraits*/
+.box2{
+	height: 450px;
+	width: 200px;
+	background-color: white;
+	display: inline-block;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	border-radius: 10px;
+}
+
+/* Below will hold the dimensions of the game board*/
 #gameboard{
 	height: 450px;
 	width: 480px;
-	/*background-color: black;*/
-	margin: 0 auto;
-	/* text-align centers content inside the div*/
 	text-align: center;
 	display: inline-block;
-	/**/
-
-	
-	
-	
+	position: relative;
 }
 
-/* The below will contain the columns for the portraits*/
-/*.left-container {
-	height: 450px;
-
-/* The below will contain the columns for the portraits*/
-.left-container {
-	height: auto;
-	width: 300px;
-/* This is set to absolute, meaning it should be absolutely positioned in reference to 
-the browser window BUT it isn't doing so because the parent .container is set to display: relative
-meaning this child div which is inside .container is now absolutely positioned RELATIVE
-to the .container and no longer the browser window. If .container wasn't set to relative, this
-left-container div would be in the top left corner of the browser window. */
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	background-color: black;
-	display: inline-block;
+/* The below are the tile properties for the game board.*/
+.tile {
+	height: 140px;
+	width: 140px;
+	background-color: red;
+	border: 2px solid white;
+	border-radius: 15px;
+	margin-left: 14px;
+	margin-top: 6px;
+	float: left;
 }
 
-/* The below will contain the columns for the portraits*/
+/* The below is the place holder location for the vehicle selection portraits */
+.box3{
+		height: 100px;
+		width: 100px;
+		background-color: white;
+		border-color: black;
+		border-radius: 10px;
+		border: 6px solid black;
+		display: inline-block;
+		text-align: center;
 
-.right-container {
-	height: 450px;
-
-.right-container {
-	height: auto;
-
-	width: 300px;
-/* This is set to absolute, meaning it should be absolutely positioned in reference to 
-the browser window BUT it isn't doing so because the parent .container is set to display: relative
-meaning this child div which is inside .container is now absolutely positioned RELATIVE
-to the .container and no longer the browser window. */
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	background-color: black;
-	display: inline-block;
 }
 
-/* This will contain the portrait of the 3 vehicles*/
-.vbox{
-	height: 152px;
-	width: 152px;
-	background-color: black;
-	border: 6px solid black;
-	border-radius: 10px;
-	display: inline-block;
-}
-
-/*The below is a hover effect to make vehicle selection appear easier*/
-	.vbox:hover{
+/* Below are the hover effects for the vehicle portraits*/
+.box3:hover{
 	border: 6px solid yellow;
 	margin: auto;
-	
-	}
-
-/* This will contain the bottom row that will have 3 vehicles*/
-.vrow {
-	height: 165px;
-	width: 500px;
-	/*border: 4px solid yellow;*/
-/* Added a 20px margin to the bottom of the vrow div so that it gives some space between the vehicle select and the bottom of the browser. Looks a bit nicer. */
-	margin: 0 auto 20px;
-	text-align: center;
-
 }
 
-/* Game Title */
-h1 {
-	text-align: center;
+/* Below are the skill buttons*/
+#skillButton1{
+	border-radius: 100px;
+	height: 75px;
+	width: 75px;
+	margin-right: 200px;
 }
 
-.nav{
-	height: 450px;
-	width: 480px;
-	/*background-color: black;*/
-	margin: 0 auto;
-	/* text-align centers content inside the div*/
-	/*text-align: center;*/
-	display: inline-block;
-
-
-
-}
-
-
-
+#skillButton2{
+	border-radius: 100px;
+	height: 75px;
+	width: 75px;
+	margin-left: 200px;

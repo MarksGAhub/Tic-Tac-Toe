@@ -7,7 +7,10 @@
 		function GameController(){
 
 			var self = this;
-			self.BoxList = [ // An array of objects that are boxes 1 - 9
+			self.hi = function () {
+				alert("hi");
+		  }
+			self.boxList = [ // An array of objects that are boxes 1 - 9
 
 			// Start of the box arrays
 			{ box: 1 
@@ -25,7 +28,7 @@
 
 
 
-			]
+			];
 
 
 		}

@@ -1,54 +1,77 @@
 <!DOCTYPE html>
-<!-- Remember to initialize libraries for Angular in html with ng-app Main js name. -->
-<html ng-app="GameApp">
+<!-- Don't forget to initialize html for angular by sourcing in module in html-->
+<html ng-app="GameApp"> 
 <head>
-	<title>Tic Attack Toe/Advance</title>
-	<!-- Linking in css. -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Tic Tac Total/War</title>
 </head>
+
+<!-- Don't forget to source in Controller into body tag for angular it's ng-controller -->
+<body ng-controller="GameController as gameCntrl"> 
+		<h1>Tic Tac Total/War</h1>
+<div class="container">
+
+
+<!-- "Row 1"The below row contains the rectangles for the scoreboard. -->
+	<div> 
+		<!--Left scoreboard -->
+		<div id="scoreBoard1" class="box1"><h2>00</h2></div> 
+			<div class="box1"><h2>00</h2></div>
+		<!--Right scoreboard -->	
+		<div id="scoreBoard2" class="box1"><h2>00</h2></div> 
+	</div>
 	
-<body ng-controller="GameController as Game">
-
-	<h1>Tic Attack Toe/Advance</h1>
-
-	<div class="container"> <!-- This div will contain the portraits and game board. -->
-		
-		<div class="nav">player 1 container</div>
-			
-			<!-- The below div will contain the game board which will contain the pieces.-->
-			<div id="gameboard"class="nav" >   
-			<!-- The start of the game board -->
-				<div class="box" ng-repeat="box in Game.BoxList"> </div>
-			<!-- The end of the game board -->
-			</div>
 
 
-		<div class="nav"> player 2 container</div>
+	<!-- "Row 2"This div contains the selected Vehicle portraits and the gameboard. -->
+	<div>
+		<div id="color1"class="box2">
+			<div> <!--placeholder for selected game portrait images--></div>
+			<!-- left vehicle portrait large -->
+		</div> 
 
-		
 
-		<div class="right-container"> player 2 container</div>
 
-		
-	</div>
-    
-			<!-- This below div will be a containter that will have the 3 vehicle portraits. -->
-	<div class="vrow">
-		<!-- The below div's will be 3 vehicle portraits. -->
-		<div class="vbox"> </div>
-		<div class="vbox"> </div>
-		<div class="vbox"> </div>			
+<!-- Game board --> 			
+			<div id="gameboard"class="box2">
+
+			<!-- This will hold the game tiles-->   
+				<div class="tile" ng-click="gameCntrl.hi()"[$index] ng-repeat="g in gameCntrl.boxList"> </div>
+			</div> 
+	
+
+
+<!-- Right vehicle portrait large -->		
+		<div id="color3"class="box2">
+			<div> <!--placeholder for selected game portraits images--></div>
+		</div>
 	</div>
 
+
+
+
+<!--  Row "3"div will contain Vehicle select and the Skill buttons. -->
+	<div> 
+<!-- Left skill button -->	
+		<div id="skillButton1" class="box3"> P1</div> 	
+<!-- Start of the character select portrait row-->
+		<div id="row1"> 
+					<div class="box3">Mech portrait</div>
+					<div class="box3">Tank portrait</div>
+					<div class="box3">Chop portrait</div>
+		</div>
+<!-- End of the  character select portrait row-->			 
+<!-- Right skill button -->	
+		<div id="skillButton2" class="box3"> P2</div>	
+	</div>
+</div>
 
 </body>
-<!-- link in script for js. -->
-<!-- Sourcing in Angular -->
-<script type="text/javascript" src="js/angular.min.js"></script>
-<!-- Sourcing in the module below -->
-<script type="text/javascript" src="js/main.js"></script>
-<!-- sourcing in the controller -->
-<script type="text/javascript" src="js/GameController.js"></script>
 
+<!-- Source in Angular -->
+<script type="text/javascript" src="js/angular.js"></script>
+<!-- Source in module -->
+<script type="text/javascript" src="js/main.js"></script>
+<!-- Source in Controller -->
+<script type="text/javascript" src="js/GameController.js"></script>
 </html>
