@@ -4,6 +4,7 @@
 	src: url(../css/font/gunmetal_regular/gunmetal_regular.ttf);
 }
 
+/* The below is the Title font*/
 h1{
 	font-size: 400%;
 }
@@ -22,12 +23,19 @@ body{
 
 }
 
+/* Below contains the background for the game and the game itself*/
 .container{
 	background-color: gray;
 	margin: 0 auto;
 	text-align: center;
+	background:
 
-	background-image: url(../img/bgcityruins.jpg);
+	linear-gradient(
+		rgba(0, 0, 0, 0.20),
+		rgba(0, 0, 0, 0.20)
+		),
+	 url(../img/bgcityruins.jpg);
+
 }
 
 #row1{
@@ -41,6 +49,7 @@ body{
 	width: 100px;
 	background-color: white;
 	display: inline-block;
+	border: 4px solid black;
 	border-radius: 10px;
 	margin-top: 2%;
 
@@ -56,6 +65,8 @@ body{
 	height: 50px;
 	width: 100px;
 	margin-left: 320px;
+
+
 }
 
 /* Below will hold the dimensions of the portraits*/
@@ -69,6 +80,7 @@ body{
 	margin-top: 2%;
 	margin-bottom: 2%;
 	border-radius: 10px;
+	border: 4px solid black;
 }
 
 /* Below will hold the dimensions of the game board*/
@@ -124,6 +136,8 @@ body{
 	height: 75px;
 	width: 75px;
 	margin-right: 200px;
+	background-color: #2980b9;
+
 }
 
 #skillButton2{
@@ -131,6 +145,9 @@ body{
 	height: 75px;
 	width: 75px;
 	margin-left: 200px;
+	background:
+	linear-gradient( rgba(255, 0, 0, 0.20), rgba(255, 0, 0, 0.20) ),
+	url(../img/headlightbuttons.png);
 }
 
 #blitz{
