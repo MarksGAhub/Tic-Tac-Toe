@@ -1,19 +1,33 @@
 
 @font-face{
 	font-family: Gunmetal;
-	src: url(css/font/gunmetal_regular/gunmetal_regular.ttf);
+	src: url(../css/font/gunmetal_regular/gunmetal_regular.ttf);
 }
+
+h1{
+	font-size: 400%;
+}
+
+h2{
+	font-size: 170%;
+}
+
 body{
 	font-family: Gunmetal;
 	background-color: white;
 	text-align: center;
 	margin: 0px auto;
+	background-image: url(../img/bgmetaltexture.jpg);
+
+
 }
 
 .container{
 	background-color: gray;
 	margin: 0 auto;
 	text-align: center;
+
+	background-image: url(../img/bgcityruins.jpg);
 }
 
 #row1{
@@ -29,7 +43,7 @@ body{
 	display: inline-block;
 	border-radius: 10px;
 	margin-top: 2%;
-	
+
 }
 /*Below will hold the dimensions and the margins of the scoreboards*/
 #scoreBoard1{
@@ -64,18 +78,25 @@ body{
 	text-align: center;
 	display: inline-block;
 	position: relative;
+	opacity: 0.8;
 }
 
 /* The below are the tile properties for the game board.*/
 .tile {
 	height: 140px;
 	width: 140px;
-	background-color: red;
+	background-color: black;
 	border: 2px solid white;
 	border-radius: 15px;
 	margin-left: 14px;
 	margin-top: 6px;
 	float: left;
+}
+
+
+.tile:hover{
+	background-color:  yellow;
+
 }
 
 /* The below is the place holder location for the vehicle selection portraits */
@@ -110,3 +131,14 @@ body{
 	height: 75px;
 	width: 75px;
 	margin-left: 200px;
+}
+
+#blitz{
+	background-image: url(../img/Blitzport_select.png);
+}
+#tank{
+	background-image: url(../img/Tank_select.png);
+}
+#bomber{
+	background-image: url(../img/Bomber_select.png);
+}

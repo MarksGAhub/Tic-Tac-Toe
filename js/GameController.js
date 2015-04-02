@@ -7,13 +7,17 @@
 		function GameController(){
 
 			var self = this;
+
 			self.hi = function () {
 				alert("hi");
-		  }
+		 	 };
+
+			self.let = {status: "X"} ;
+
 			self.boxList = [ // An array of objects that are boxes 1 - 9
 
 			// Start of the box arrays
-			{ box: 1 
+			{ box: 1
 			},{ box: 2
 			},{ box: 3
 			},{ box: 4
