@@ -8,28 +8,39 @@
 
 			var self = this;
 
-			self.hi = function () {
-				alert("hi");
-		 	 };
+			// this describes who is currently playing
+			var turn=1;
 
 
-			self.getX = function () {
-				value: "X";
+
+			self.click= function ($index) {
+				//Disable clicking after the box has been occupied
+				if (self.boxList[$index].status) {
+					return false;
+				}
+				if (turn ==1) {
+					self.boxList[$index].status = 'X';
+					turn++;
+				}
+				else {
+					self.boxList[$index].status = 'O';
+					turn--;
+				}
 			};
 
-			self.boxList = [ // An array of objects that are boxes 1 - 9
+			self.boxList = [ // An array of objects that are boxes
 
 			// Start of the box arrays
-			{ box: 1, status: null
-			},{ box: 2, status: null
-			},{ box: 3, status: null
-			},{ box: 4, status: null
-			},{ box: 5, status: null
-			},{ box: 6, status: null
-			},{ box: 7, status: null
-			},{ box: 8, status: null
-			},{ box: 9, status: null
-			}// end of the box arrays
+			{  status: null  },
+			{  status: null  },
+			{  status: null  },
+			{  status: null  },
+			{  status: null  },
+			{  status: null  },
+			{  status: null  },
+			{  status: null  },
+			{  status: null  }
+			// end of the box arrays
 
 
 
