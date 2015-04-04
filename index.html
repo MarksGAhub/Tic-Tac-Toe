@@ -37,7 +37,7 @@
 			<div id="gameboard"class="box2">
 
 			<!-- This will hold the game tiles (g.status will show the text)-->
-				<div class="tile"  ng-bind="gameCntrl.boxLists[$index].status"  ng-click="gameCntrl.click($index)" ng-repeat="g in gameCntrl.boxList">{{g.status}}</div>
+				<div class="tile"  ng-bind="gameCntrl.gameTile[$index].status"  ng-click="gameCntrl.click($index)" ng-repeat="g in gameCntrl.gameTile">{{g.status}}</div>
 			</div>
 
 
