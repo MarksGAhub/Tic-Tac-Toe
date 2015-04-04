@@ -105,10 +105,28 @@ alert('This match is a Draw!');
 }
 if( (self.boxList[0].status ==='O') && (self.boxList[1].status ==='X') && (self.boxList[2].status ==='O') &&
  	(self.boxList[3].status ==='X') && (self.boxList[4].status ==='X') && (self.boxList[5].status ==='O') &&
- 	(self.boxList[6].status ==='X') && (self.boxList[7].status ==='O') && (self.boxList[8].status ==='X') ){
+ 	(self.boxList[6].status ==='X') && (self.boxList[7].status ==='O') && (self.boxList[8].status ==='X') )
+{
 	alert( 'This match is a Draw! Strategic military advancement to the rear!');
 }
-
+if( (self.boxList[0].status ==='X') && (self.boxList[1].status ==='O') && (self.boxList[2].status ==='X') &&
+ 	(self.boxList[3].status ==='O') && (self.boxList[4].status ==='X') && (self.boxList[5].status ==='X') &&
+ 	(self.boxList[6].status ==='O') && (self.boxList[7].status ==='X') && (self.boxList[8].status ==='O') )
+{
+	alert( 'This match is a Draw! Strategic military advancement to the rear!');
+}
+if( (self.boxList[0].status ==='X') && (self.boxList[1].status ==='X') && (self.boxList[2].status ==='O') &&
+ 	(self.boxList[3].status ==='O') && (self.boxList[4].status ==='X') && (self.boxList[5].status ==='X') &&
+ 	(self.boxList[6].status ==='X') && (self.boxList[7].status ==='O') && (self.boxList[8].status ==='O') )
+{
+	alert( 'This match is a Draw! Better luck Next Time!');
+}
+if( (self.boxList[0].status ==='X') && (self.boxList[1].status ==='O') && (self.boxList[2].status ==='X') &&
+ 	(self.boxList[3].status ==='X') && (self.boxList[4].status ==='X') && (self.boxList[5].status ==='O') &&
+ 	(self.boxList[6].status ==='O') && (self.boxList[7].status ==='X') && (self.boxList[8].status ==='O') )
+{
+	alert( 'This match is a Draw! Better luck Next Time!');
+}
 
 
 }
