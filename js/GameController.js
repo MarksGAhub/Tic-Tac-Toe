@@ -9,7 +9,22 @@
 			var self = this;
 
 			// this describes who is currently playing
-			var turn=1;
+			var turn=getPlayer();
+
+// This randomly selects who gets to go first.
+function getPlayer() {
+    var randomNumber = Math.random();
+    if (randomNumber < 0.50)
+        {
+        return 1;
+        }
+
+    else if (randomNumber > 0.50)
+        {
+        return 2;
+         }
+}
+
 			//self.didXWin = true
 			//self.didYWin = false
 
@@ -58,35 +73,51 @@ if( 	( self.gameTile[3].status === 'X') && (self.gameTile[4].status === 'X')  &&
 if( 	( self.gameTile[2].status === 'X') && (self.gameTile[5].status === 'X')  && (self.gameTile[8].status === 'X') )
 		{
 		alert('X is Winner');
-	}
+		}
 }
 //Logic for O as winner
 function getWinnerO(){
-	if( ( self.gameTile[0].status === 'O') && (self.gameTile[1].status === 'O')  && (self.gameTile[2].status === 'O') ) {
+if( 	( self.gameTile[0].status === 'O') && (self.gameTile[1].status === 'O')  && (self.gameTile[2].status === 'O') )
+		{
 		alert(' O is Winner');
-	}
-	if( ( self.gameTile[0].status === 'O') && (self.gameTile[3].status === 'O')  && (self.gameTile[6].status === 'O') ) {
+		}
+
+if( 	( self.gameTile[0].status === 'O') && (self.gameTile[3].status === 'O')  && (self.gameTile[6].status === 'O') )
+		{
 		alert('O is Winner');
-	}
-	if( ( self.gameTile[2].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[6].status === 'O') ) {
+		}
+
+
+if( 	( self.gameTile[2].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[6].status === 'O') )
+		{
 		alert('O is Winner');
-	}
-	if( ( self.gameTile[6].status === 'O') && (self.gameTile[7].status === 'O')  && (self.gameTile[8].status === 'O') ) {
+		}
+
+if( 	( self.gameTile[6].status === 'O') && (self.gameTile[7].status === 'O')  && (self.gameTile[8].status === 'O') )
+		{
 		alert('O is Winner');
-	}
-	if( ( self.gameTile[0].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[8].status === 'O') ) {
+		}
+
+if( 	( self.gameTile[0].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[8].status === 'O') )
+		 {
 		alert('O is Winner');
-	}
-	if( ( self.gameTile[1].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[7].status === 'O') ) {
+		}
+if( 	( self.gameTile[1].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[7].status === 'O') )
+		{
 		alert('O is Winner');
-	}
-	if( ( self.gameTile[3].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[5].status === 'O') ) {
+		}
+
+if( 	( self.gameTile[3].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[5].status === 'O') )
+		{
 		alert('O is Winner');
-	}
-	if( ( self.gameTile[2].status === 'O') && (self.gameTile[5].status === 'O')  && (self.gameTile[8].status === 'O') ) {
+		}
+
+if( 	( self.gameTile[2].status === 'O') && (self.gameTile[5].status === 'O')  && (self.gameTile[8].status === 'O') )
+		 {
 		alert('O is Winner');
-	}
+		}
 }
+
 //Logic for tie game
 function tieGame(){
 if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
@@ -180,7 +211,72 @@ if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (se
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Pull back immediately!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
+ 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
+ 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
+ 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
+ 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
 
 }// End of the tie fuction
 
@@ -197,17 +293,21 @@ if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (se
 				if (self.gameTile[$index].status) {
 					return false;
 				}
-				if (turn ==1) {
+				if (turn ==1 ) {
+
 					self.gameTile[$index].status = 'X';
 					getWinnerX();
 					tieGame();
 					turn++;
+
 				}
-				else {
+				else if (turn ==2 ) {
+
 					self.gameTile[$index].status = 'O';
 					getWinnerO();
 					tieGame();
 					turn--;
+
 				}
 				// self.testfunc();
 				// console.log(self.boxList[$index].status, $index)

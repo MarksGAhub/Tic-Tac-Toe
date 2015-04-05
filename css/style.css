@@ -10,9 +10,6 @@ h1{
 
 }
 
-h2{
-	font-size: 170%;
-}
 
 body{
 	font-family: Gunmetal;
@@ -26,7 +23,8 @@ body{
 
 /* Below contains the background for the game and the game itself*/
 .container{
-	background-color: gray;
+	border-bottom: 2px solid black;
+    	border-top: 2px solid black;
 	margin: 0 auto;
 	text-align: center;
 	background:
@@ -45,6 +43,7 @@ body{
 
 /* The below will be the score place holder*/
 .box1{
+	font-size: 150%;
 	height: 50px;
 	width: 100px;
 	background-color: white;
@@ -56,18 +55,26 @@ body{
 
 /*Below will hold the dimensions and the margins of the scoreboards*/
 #scoreBoard1{
-
 	height: 50px;
 	width: 100px;
 	margin-right: 320px;
 }
 
 #scoreBoard2{
-
 	height: 50px;
 	width: 100px;
 	margin-left: 320px;
 }
+
+#reset{
+	background-color:  rgb(127, 140, 141);
+
+}
+#reset:hover {
+
+	background-color: rgb(192, 57, 43);
+}
+
 
 /* Below will hold the dimensions of the portraits*/
 .box2{
