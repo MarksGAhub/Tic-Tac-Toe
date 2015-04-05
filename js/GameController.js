@@ -4,7 +4,9 @@
 		.module('GameApp')
 		.controller('GameController', GameController);
 
-		function GameController(){
+		GameController.$inject = ['$firebaseObject', '$firebaseArray'];
+
+		function GameController($firebaseObject, $firebaseArray){
 
 			var self = this;
 
@@ -274,6 +276,12 @@ if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (se
 if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
  	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
  	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
+ 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
+ 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}

@@ -1,6 +1,6 @@
 //IIFE
 (function(){
 	angular
-		.module('GameApp',[]);
+		.module('GameApp',['firebase']);
 
 })();
