@@ -35,8 +35,7 @@ function getPlayer() {
          }
 }
 
-			//self.didXWin = true
-			//self.didYWin = false
+
 
 		// self.testfunc = function() {
 		// 	var toprow = self.boxList[0].status + self.boxList[1].status + self.boxList[2].status;
@@ -336,8 +335,7 @@ if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (se
 					turn--;
 
 				}
-				// self.testfunc();
-				// console.log(self.boxList[$index].status, $index)
+
 			};
 
 			self.gameTile = [ // An array of objects that are boxes
