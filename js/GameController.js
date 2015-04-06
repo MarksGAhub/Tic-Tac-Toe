@@ -7,11 +7,19 @@
 		GameController.$inject = ['$firebaseObject', '$firebaseArray'];
 
 		function GameController($firebaseObject, $firebaseArray){
+		var self = this;
 
-			var self = this;
 
-			// this describes who is currently playing
-			var turn=getPlayer();
+		// this describes who is currently playing
+		var turn=getPlayer();
+		self.gameplay = gamePlay();
+
+ function gamePlay(){
+    var ref = new Firebase('https://myfirebasefirstapp.firebaseio.com/game');
+    var gameplay = $firebaseArray(ref);
+    return gameplay;
+  }
+
 
 // This randomly selects who gets to go first.
 function getPlayer() {
@@ -285,7 +293,18 @@ if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (se
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-
+if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='O') &&
+ 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
+ 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
+ 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
+ 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
 }// End of the tie fuction
 
 
