@@ -14,9 +14,24 @@
 		var turn=getPlayer();
 		self.gameplay = gamePlay();
 
+		self.gameplay.board = [
+			{value: ""},
+			{value: ""},
+			{value: ""},
+			{value: ""},
+			{value: ""},
+			{value: ""},
+			{value: ""},
+			{value: ""},
+			{value: ""}
+		];
+
+		self.gameplay.$save(self.gameplay);
+
+
  function gamePlay(){
     var ref = new Firebase('https://myfirebasefirstapp.firebaseio.com/game');
-    var gameplay = $firebaseArray(ref);
+    var gameplay = $firebaseObject(ref);
     return gameplay;
   }
 
@@ -44,84 +59,84 @@ function getPlayer() {
 
 //logic for X as winner
 function getWinnerX() {
-if( 	( self.gameTile[0].status === 'X') && (self.gameTile[1].status === 'X')  && (self.gameTile[2].status === 'X') )
+if( 	( self.gameplay.board[0].value === 'X') && (self.gameplay.board[1].value === 'X')  && (self.gameplay.board[2].value === 'X') )
 		{
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[0].status === 'X') && (self.gameTile[3].status === 'X')  && (self.gameTile[6].status === 'X') )
+if( 	( self.gameplay.board[0].value === 'X') && (self.gameplay.board[3].value === 'X')  && (self.gameplay.board[6].value === 'X') )
 		 {
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[2].status === 'X') && (self.gameTile[4].status === 'X')  && (self.gameTile[6].status === 'X') )
+if( 	( self.gameplay.board[2].value === 'X') && (self.gameplay.board[4].value === 'X')  && (self.gameplay.board[6].value === 'X') )
 		{
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[6].status === 'X') && (self.gameTile[7].status === 'X')  && (self.gameTile[8].status === 'X') )
+if( 	( self.gameplay.board[6].value === 'X') && (self.gameplay.board[7].value === 'X')  && (self.gameplay.board[8].value === 'X') )
 		{
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[0].status === 'X') && (self.gameTile[4].status === 'X')  && (self.gameTile[8].status === 'X') )
+if( 	( self.gameplay.board[0].value === 'X') && (self.gameplay.board[4].value === 'X')  && (self.gameplay.board[8].value === 'X') )
 		 {
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[1].status === 'X') && (self.gameTile[4].status === 'X')  && (self.gameTile[7].status === 'X') )
+if( 	( self.gameplay.board[1].value === 'X') && (self.gameplay.board[4].value === 'X')  && (self.gameplay.board[7].value === 'X') )
 		{
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[3].status === 'X') && (self.gameTile[4].status === 'X')  && (self.gameTile[5].status === 'X') )
+if( 	( self.gameplay.board[3].value === 'X') && (self.gameplay.board[4].value === 'X')  && (self.gameplay.board[5].value === 'X') )
 		{
 		alert('X is Winner');
 		}
 
-if( 	( self.gameTile[2].status === 'X') && (self.gameTile[5].status === 'X')  && (self.gameTile[8].status === 'X') )
+if( 	( self.gameplay.board[2].value === 'X') && (self.gameplay.board[5].value === 'X')  && (self.gameplay.board[8].value === 'X') )
 		{
 		alert('X is Winner');
 		}
 }
 //Logic for O as winner
 function getWinnerO(){
-if( 	( self.gameTile[0].status === 'O') && (self.gameTile[1].status === 'O')  && (self.gameTile[2].status === 'O') )
+if( 	( self.gameplay.board[0].value === 'O') && (self.gameplay.board[1].value === 'O')  && (self.gameplay.board[2].value === 'O') )
 		{
 		alert(' O is Winner');
 		}
 
-if( 	( self.gameTile[0].status === 'O') && (self.gameTile[3].status === 'O')  && (self.gameTile[6].status === 'O') )
+if( 	( self.gameplay.board[0].value === 'O') && (self.gameplay.board[3].value === 'O')  && (self.gameplay.board[6].value === 'O') )
 		{
 		alert('O is Winner');
 		}
 
 
-if( 	( self.gameTile[2].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[6].status === 'O') )
+if( 	( self.gameplay.board[2].value === 'O') && (self.gameplay.board[4].value === 'O')  && (self.gameplay.board[6].value === 'O') )
 		{
 		alert('O is Winner');
 		}
 
-if( 	( self.gameTile[6].status === 'O') && (self.gameTile[7].status === 'O')  && (self.gameTile[8].status === 'O') )
+if( 	( self.gameplay.board[6].value === 'O') && (self.gameplay.board[7].value === 'O')  && (self.gameplay.board[8].value === 'O') )
 		{
 		alert('O is Winner');
 		}
 
-if( 	( self.gameTile[0].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[8].status === 'O') )
+if( 	( self.gameplay.board[0].value === 'O') && (self.gameplay.board[4].value === 'O')  && (self.gameplay.board[8].value === 'O') )
 		 {
 		alert('O is Winner');
 		}
-if( 	( self.gameTile[1].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[7].status === 'O') )
+if( 	( self.gameplay.board[1].value === 'O') && (self.gameplay.board[4].value === 'O')  && (self.gameplay.board[7].value === 'O') )
 		{
 		alert('O is Winner');
 		}
 
-if( 	( self.gameTile[3].status === 'O') && (self.gameTile[4].status === 'O')  && (self.gameTile[5].status === 'O') )
+if( 	( self.gameplay.board[3].value === 'O') && (self.gameplay.board[4].value === 'O')  && (self.gameplay.board[5].value === 'O') )
 		{
 		alert('O is Winner');
 		}
 
-if( 	( self.gameTile[2].status === 'O') && (self.gameTile[5].status === 'O')  && (self.gameTile[8].status === 'O') )
+if( 	( self.gameplay.board[2].value === 'O') && (self.gameplay.board[5].value === 'O')  && (self.gameplay.board[8].value === 'O') )
 		 {
 		alert('O is Winner');
 		}
@@ -129,181 +144,194 @@ if( 	( self.gameTile[2].status === 'O') && (self.gameTile[5].status === 'O')  &&
 
 //Logic for tie game
 function tieGame(){
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
-	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
-	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
     		alert('This match is a Draw!');
 		}
 
 
-if( 	 (self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
-	 (self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	 (self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	 (self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+	 (self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	 (self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
     		alert('This match is a Draw!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
     		alert('This match is a Draw!');
 		}
 
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='X') )
 		{
     		alert('This match is a Draw!');
 		}
 
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert('This match is a Draw!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Strategic military advancement to the rear!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Strategic military advancement to the rear!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
 
 
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
 
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Pull back immediately!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='X') &&
- 	(self.gameTile[3].status ==='X') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='X') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='O') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='O') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='X') )
+if( 	(self.gameplay.board[0].value ==='O') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='O') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='O') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='X') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='O') && (self.gameTile[7].status ==='X') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='X') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
-if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (self.gameTile[2].status ==='O') &&
- 	(self.gameTile[3].status ==='O') && (self.gameTile[4].status ==='O') && (self.gameTile[5].status ==='X') &&
- 	(self.gameTile[6].status ==='X') && (self.gameTile[7].status ==='O') && (self.gameTile[8].status ==='O') )
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='O') )
 		{
 		alert( 'This match is a Draw! Better luck Next Time!');
 		}
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='X') && (self.gameplay.board[2].value ==='O') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='X') && (self.gameplay.board[7].value ==='O') && (self.gameplay.board[8].value ==='X') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='O') && (self.gameplay.board[2].value ==='X') &&
+ 	(self.gameplay.board[3].value ==='O') && (self.gameplay.board[4].value ==='O') && (self.gameplay.board[5].value ==='X') &&
+ 	(self.gameplay.board[6].value ==='O') && (self.gameplay.board[7].value ==='X') && (self.gameplay.board[8].value ==='O') )
+		{
+		alert( 'This match is a Draw! Better luck Next Time!');
+		}
+
 }// End of the tie fuction
 
 
@@ -316,12 +344,12 @@ if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (se
 				//Disable clicking after the box has been occupied
 				console.log($index);
 
-				if (self.gameTile[$index].status) {
+				if (self.gameplay.board[$index].value) {
 					return false;
 				}
 				if (turn ==1 ) {
 
-					self.gameTile[$index].status = 'X';
+					self.gameplay.board[$index].value = 'X';
 					getWinnerX();
 					tieGame();
 					turn++;
@@ -329,15 +357,16 @@ if( 	(self.gameTile[0].status ==='X') && (self.gameTile[1].status ==='X') && (se
 				}
 				else if (turn ==2 ) {
 
-					self.gameTile[$index].status = 'O';
+					self.gameplay.board[$index].value = 'O';
 					getWinnerO();
 					tieGame();
 					turn--;
 
 				}
+				self.gameplay.$save(self.gameplay);
 
 			};
-
+// the self.game tile was changed to gameplay.gametile to reference firebase. - gameplay is the firebase object at the top of the code. Then all the self will need to be replased with gameplay'.
 			self.gameTile = [ // An array of objects that are boxes
 			// Start of the box arrays
 			{  status: null  },
