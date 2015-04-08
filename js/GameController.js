@@ -25,7 +25,7 @@
 			{value: ""},
 			{value: ""}
 		];
-
+// Saves the data on the board.
 		self.gameplay.$save(self.gameplay);
 
 
@@ -363,6 +363,7 @@ if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='
 					turn--;
 
 				}
+				//saves the click on firebase
 				self.gameplay.$save(self.gameplay);
 
 			};
