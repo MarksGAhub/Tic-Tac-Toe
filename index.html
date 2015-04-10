@@ -40,7 +40,7 @@
 			<div id="gameboard"class="box2">
 
 			<!-- This will hold the game tiles (g.status will show the text)-->
-				<div class="tile"  ng-bind="gameCntrl.gameplay.board[$index].value"  ng-click="gameCntrl.click($index)" ng-repeat="g in gameCntrl.gameplay.board"></div>
+				<div class="tile"  ng-click="gameCntrl.click($index)" ng-repeat="g in gameCntrl.gameplay.board">{{g.value}}</div>
 			</div>
 
 
@@ -57,7 +57,7 @@
 <!--  Row "3"div will contain Vehicle select and the Skill buttons. -->
 	<div>
 <!-- Left skill button -->
-		<div id="skillButton1" class="box3"> </div>
+		<div id="skillButton1" class="box3" ng-click="gameCntrl.pickPlayer(1)"> </div>
 <!-- Start of the character select portrait row-->
 		<div id="row1">
 					<div id="blitz" class="box3"></div>
@@ -66,7 +66,7 @@
 		</div>
 <!-- End of the  character select portrait row-->
 <!-- Right skill button -->
-		<div id="skillButton2" class="box3"> </div>
+		<div id="skillButton2" class="box3" ng-click= "gameCntrl.pickPlayer(2)"> </div>
 	</div>
 </div>
 

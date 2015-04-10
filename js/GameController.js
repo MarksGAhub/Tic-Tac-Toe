@@ -11,10 +11,26 @@
 
 
 		// this describes who is currently playing
-		var turn=getPlayer();
-		self.gameplay = gamePlay();
 
-		self.gameplay.board = [
+		 gamePlay();
+		self.click = click;
+		self.pickPlayer = pickPlayer;
+		self.playNum = 0;
+
+
+// Saves the data on the board.
+
+
+function pickPlayer(playNum) {
+	self.playNum = playNum;
+
+}
+
+
+ function gamePlay(){
+    var ref = new Firebase('https://myfirebasefirstapp.firebaseio.com/game');
+    self.gameplay = $firebaseObject(ref);
+    self.gameplay.board = [
 			{value: ""},
 			{value: ""},
 			{value: ""},
@@ -25,15 +41,20 @@
 			{value: ""},
 			{value: ""}
 		];
-// Saves the data on the board.
-		self.gameplay.$save(self.gameplay);
 
+    self.gameplay.turn = getPlayer();
 
- function gamePlay(){
-    var ref = new Firebase('https://myfirebasefirstapp.firebaseio.com/game');
-    var gameplay = $firebaseObject(ref);
-    return gameplay;
+    self.gameplay.player_one = false;
+    self.gameplay.player_two = false;
+    self.gameplay.$save();
+
   }
+
+  // function getboard() {
+  // 	var ref = new Firebase("https://myfirebasefirstapp.firebaseio.com/game/board");
+  // 	var gameboard = $firebaseArray(ref);
+  // 	return gameboard;
+  // }
 
 
 // This randomly selects who gets to go first.
@@ -41,21 +62,19 @@ function getPlayer() {
     var randomNumber = Math.random();
     if (randomNumber < 0.50)
         {
+         alert('Please select a red or blue button and then the game board to play');
         return 1;
         }
 
     else if (randomNumber > 0.50)
         {
+         alert('Please select a red or blue button and then the game board to play');
         return 2;
          }
 }
 
 
 
-		// self.testfunc = function() {
-		// 	var toprow = self.boxList[0].status + self.boxList[1].status + self.boxList[2].status;
-		// 	console.log(toprow);
-		// };
 
 //logic for X as winner
 function getWinnerX() {
@@ -340,47 +359,38 @@ if( 	(self.gameplay.board[0].value ==='X') && (self.gameplay.board[1].value ==='
 
 
 
-			self.click= function ($index) {
+		function click($index) {
 				//Disable clicking after the box has been occupied
 				console.log($index);
 
 				if (self.gameplay.board[$index].value) {
 					return false;
+
 				}
-				if (turn ==1 ) {
+				if (self.gameplay.turn ==1  && self.playNum ==1) {
 
 					self.gameplay.board[$index].value = 'X';
+					// getboard();
 					getWinnerX();
 					tieGame();
-					turn++;
+					self.gameplay.turn++;
+
 
 				}
-				else if (turn ==2 ) {
+				else if (self.gameplay.turn ==2 && self.playNum == 2) {
 
 					self.gameplay.board[$index].value = 'O';
+					// getboard();
 					getWinnerO();
 					tieGame();
-					turn--;
+					self.gameplay.turn--;
 
 				}
 				//saves the click on firebase
-				self.gameplay.$save(self.gameplay);
+				self.gameplay.$save();
 
-			};
-// the self.game tile was changed to gameplay.gametile to reference firebase. - gameplay is the firebase object at the top of the code. Then all the self will need to be replased with gameplay'.
-			self.gameTile = [ // An array of objects that are boxes
-			// Start of the box arrays
-			{  status: null  },
-			{  status: null  },
-			{  status: null  },
-			{  status: null  },
-			{  status: null  },
-			{  status: null  },
-			{  status: null  },
-			{  status: null  },
-			{  status: null  }
-			// end of the box arrays
-			];
+			}
+
 
 
 		}
